@@ -292,5 +292,5 @@ console.log(`RESULTS: ${passed} passed, ${failed} failed out of ${passed + faile
 console.log(`${'═'.repeat(40)}`);
 
 if (failed > 0) {
-  process.exit(1);
+  throw new Error("Tests failed");
 }
