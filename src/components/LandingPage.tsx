@@ -182,7 +182,7 @@ export function LandingPage() {
             and should be independently verified by a qualified engineer before use 
             in construction or safety-critical applications.
             <div style={{ marginTop: '1rem', display: 'flex', justifyContent: 'center' }}>
-              <img src="https://profile-counter.glitch.me/bmushtaq65-eng.beamlab/count.svg" alt="visits" />
+              <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fbmushtaq65-eng.github.io%2Fbeamlab&countColor=%23263759" alt="visits" />
             </div>
           </div>
         </div>
