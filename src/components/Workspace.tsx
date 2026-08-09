@@ -12,6 +12,7 @@ import { ReactionsCard, CriticalValuesCard, LoadTable, CalculationsPanel, Analys
 import { generateReport, openReportInWindow } from '../utils/reportGenerator';
 import { exportProjectJSON, importProjectJSON } from '../utils/storage';
 import { PointLoad, DistributedLoad, AppliedMoment } from '../types/beam';
+import { AdWidget } from './AdWidget';
 
 export function Workspace() {
   const { state, dispatch, runAnalysis } = useAppContext();
@@ -206,10 +207,20 @@ export function Workspace() {
               Reset Beam
             </button>
           </div>
+          
+          {/* Sidebar Ad Placement */}
+          <div style={{ padding: '0 1rem 1rem 1rem' }}>
+            <AdWidget location="Sidebar Vertical" style={{ minHeight: '250px' }} />
+          </div>
         </aside>
 
         {/* Main Content */}
         <main className="workspace-main">
+          {/* Top Main Ad Placement */}
+          <section className="workspace-section" style={{ paddingBottom: 0 }}>
+            <AdWidget location="Workspace Top Banner" style={{ minHeight: '90px' }} />
+          </section>
+
           {/* Free-Body Diagram */}
           <section className="workspace-section beam-viz-section">
             <div className="section-header">
@@ -298,6 +309,11 @@ export function Workspace() {
                   showGrid={true}
                   svgId="bmd-chart-svg"
                 />
+              </section>
+
+              {/* Main Area Ad Placement */}
+              <section className="workspace-section">
+                <AdWidget location="Below Results Banner" />
               </section>
 
               {/* Coordinate Inspector (mobile) */}

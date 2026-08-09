@@ -506,3 +506,28 @@ input, button, select, textarea { font: inherit; }
 .animate-fade-in { animation: fadeIn var(--transition-normal) forwards; }
 .animate-slide-in { animation: slideIn var(--transition-normal) forwards; }
 .animate-scale-in { animation: scaleIn var(--transition-normal) forwards; }
+
+/* AdSense Ad Containers */
+.beamlab-ad-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem auto;
+  padding: 0.5rem;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  width: 100%;
+  overflow: hidden;
+  min-height: 100px; /* Prevent layout shift */
+}
+
+.beamlab-ad-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}

@@ -6,6 +6,7 @@ import React from 'react';
 import { useAppContext } from '../context/AppContext';
 import { BEAM_PRESETS } from '../solver/presets';
 import { generateId } from '../utils/helpers';
+import { AdWidget } from './AdWidget';
 
 export function LandingPage() {
   const { dispatch } = useAppContext();
@@ -82,6 +83,11 @@ export function LandingPage() {
         <div className="hero-visualization">
           <HeroBeamAnimation />
         </div>
+      </section>
+
+      {/* Ad Placement 1 */}
+      <section className="features-section" style={{ padding: '0 2rem 2rem 2rem' }}>
+        <AdWidget location="Landing Page Hero" style={{ maxWidth: '800px', margin: '0 auto' }} />
       </section>
 
       {/* Features */}
