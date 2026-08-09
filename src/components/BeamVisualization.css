@@ -1,0 +1,213 @@
+.beam-visualization-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--bg-primary, #1e1e1e);
+  color: var(--text-primary, #e0e0e0);
+  border: 1px solid var(--border-color, #333);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.beam-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  user-select: none;
+}
+
+/* Beam Elements */
+.beam-rect {
+  fill: var(--color-primary, #6c757d);
+  stroke: var(--border-color, #333);
+  stroke-width: 2;
+  transition: fill 0.2s ease;
+}
+
+/* Supports */
+.support-group {
+  cursor: grab;
+}
+
+.support-group:active {
+  cursor: grabbing;
+}
+
+.support-shape {
+  fill: var(--color-accent, #0d6efd);
+  stroke: var(--bg-primary, #1e1e1e);
+  stroke-width: 1.5;
+  transition: transform 0.2s ease, fill 0.2s ease;
+}
+
+.support-group:hover .support-shape {
+  fill: var(--color-primary, #6c757d);
+  transform: scale(1.05);
+}
+
+.support-roller-circle {
+  fill: var(--color-accent, #0d6efd);
+  stroke: var(--bg-primary, #1e1e1e);
+  stroke-width: 1;
+}
+
+.support-fixed-hatch {
+  stroke: var(--color-accent, #0d6efd);
+  stroke-width: 1;
+}
+
+/* Loads */
+.load-group {
+  cursor: pointer;
+}
+
+.load-arrow {
+  stroke: var(--color-danger, #dc3545);
+  stroke-width: 2;
+  fill: none;
+  transition: stroke 0.2s ease, stroke-width 0.2s ease;
+}
+
+.load-arrow-head {
+  fill: var(--color-danger, #dc3545);
+  transition: fill 0.2s ease, transform 0.2s ease;
+}
+
+.load-dist-line {
+  stroke: var(--color-danger, #dc3545);
+  stroke-width: 1.5;
+  fill: none;
+}
+
+.load-dist-fill {
+  fill: var(--color-danger, #dc3545);
+  opacity: 0.15;
+}
+
+.load-text {
+  fill: var(--text-primary, #e0e0e0);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  text-anchor: middle;
+  transition: fill 0.2s ease;
+}
+
+.load-group:hover .load-arrow,
+.load-group:hover .load-dist-line {
+  stroke: var(--color-accent, #0d6efd);
+}
+
+.load-group:hover .load-arrow-head {
+  fill: var(--color-accent, #0d6efd);
+}
+
+.load-group:hover .load-dist-fill {
+  fill: var(--color-accent, #0d6efd);
+}
+
+.load-group:hover .load-text {
+  fill: var(--color-accent, #0d6efd);
+}
+
+.load-group.selected .load-arrow,
+.load-group.selected .load-dist-line {
+  stroke: var(--color-accent, #0d6efd);
+  stroke-width: 3;
+}
+
+.load-group.selected .load-arrow-head {
+  fill: var(--color-accent, #0d6efd);
+}
+
+.load-group.selected .load-dist-fill {
+  fill: var(--color-accent, #0d6efd);
+  opacity: 0.25;
+}
+
+.load-group.selected .load-text {
+  fill: var(--color-accent, #0d6efd);
+  font-weight: 700;
+}
+
+/* Moment Loads */
+.moment-path {
+  fill: none;
+  stroke: var(--color-danger, #dc3545);
+  stroke-width: 2;
+}
+
+.load-group:hover .moment-path {
+  stroke: var(--color-accent, #0d6efd);
+}
+
+.load-group.selected .moment-path {
+  stroke: var(--color-accent, #0d6efd);
+  stroke-width: 3;
+}
+
+/* Reactions */
+.reaction-arrow {
+  stroke: #198754; /* Green */
+  stroke-width: 2.5;
+  fill: none;
+}
+
+.reaction-arrow-head {
+  fill: #198754;
+}
+
+.reaction-text {
+  fill: #198754;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-anchor: middle;
+}
+
+.reaction-moment-path {
+  fill: none;
+  stroke: #198754;
+  stroke-width: 2;
+}
+
+/* Dimensions and Grid */
+.dimension-line {
+  stroke: var(--border-color, #333);
+  stroke-width: 1;
+}
+
+.dimension-tick {
+  stroke: var(--border-color, #333);
+  stroke-width: 1;
+}
+
+.dimension-text {
+  fill: var(--text-primary, #e0e0e0);
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  text-anchor: middle;
+}
+
+.grid-line {
+  stroke: var(--border-color, #333);
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+  opacity: 0.5;
+}
+
+.axis-line {
+  stroke: var(--text-primary, #e0e0e0);
+  stroke-width: 1;
+  opacity: 0.3;
+}
+
+.ruler-text {
+  fill: var(--text-primary, #e0e0e0);
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  text-anchor: middle;
+  opacity: 0.7;
+}

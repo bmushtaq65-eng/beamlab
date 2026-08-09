@@ -1,0 +1,218 @@
+.diagramChartContainer {
+  position: relative;
+  width: 100%;
+  font-family: var(--font-family, system-ui, -apple-system, sans-serif);
+  background-color: var(--bg-primary, #ffffff);
+  color: var(--text-primary, #333333);
+  border: 1px solid var(--border-color, #e0e0e0);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Dark mode fallback */
+@media (prefers-color-scheme: dark) {
+  .diagramChartContainer {
+    background-color: var(--bg-primary, #1e1e1e);
+    color: var(--text-primary, #f0f0f0);
+    border-color: var(--border-color, #333333);
+  }
+}
+
+.chartHeader {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color, #e0e0e0);
+  background-color: var(--bg-secondary, #f9f9f9);
+}
+
+@media (prefers-color-scheme: dark) {
+  .chartHeader {
+    background-color: var(--bg-secondary, #252525);
+    border-color: var(--border-color, #333333);
+  }
+}
+
+.chartTitle {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.chartSvgWrapper {
+  position: relative;
+  width: 100%;
+  cursor: crosshair;
+}
+
+.chartSvg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* SVG Elements */
+.gridLine {
+  stroke: var(--grid-color, #e5e7eb);
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+}
+
+@media (prefers-color-scheme: dark) {
+  .gridLine {
+    stroke: var(--grid-color, #374151);
+  }
+}
+
+.axisLine {
+  stroke: var(--text-primary, #333);
+  stroke-width: 1.5;
+}
+
+@media (prefers-color-scheme: dark) {
+  .axisLine {
+    stroke: var(--text-primary, #f0f0f0);
+  }
+}
+
+.zeroLine {
+  stroke: var(--text-primary, #333);
+  stroke-width: 2;
+  stroke-dasharray: 6 4;
+}
+
+@media (prefers-color-scheme: dark) {
+  .zeroLine {
+    stroke: var(--text-primary, #f0f0f0);
+  }
+}
+
+.axisTick {
+  stroke: var(--text-primary, #333);
+  stroke-width: 1.5;
+}
+
+@media (prefers-color-scheme: dark) {
+  .axisTick {
+    stroke: var(--text-primary, #f0f0f0);
+  }
+}
+
+.axisLabel {
+  fill: var(--text-secondary, #666);
+  font-size: 12px;
+  user-select: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .axisLabel {
+    fill: var(--text-secondary, #aaa);
+  }
+}
+
+.axisTitle {
+  fill: var(--text-primary, #333);
+  font-size: 14px;
+  font-weight: 600;
+  user-select: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .axisTitle {
+    fill: var(--text-primary, #f0f0f0);
+  }
+}
+
+.diagramLine {
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.fillAreaPositive {
+  opacity: 0.2;
+}
+
+.fillAreaNegative {
+  opacity: 0.2;
+}
+
+.criticalPoint {
+  stroke: var(--bg-primary, #fff);
+  stroke-width: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+  .criticalPoint {
+    stroke: var(--bg-primary, #1e1e1e);
+  }
+}
+
+.criticalPointLabel {
+  font-size: 11px;
+  font-weight: bold;
+  user-select: none;
+}
+
+.cursorLine {
+  stroke: var(--color-accent, #3b82f6);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 2;
+  pointer-events: none;
+}
+
+.tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: var(--bg-primary, #ffffff);
+  border: 1px solid var(--border-color, #e0e0e0);
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 13px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translate(-50%, -120%);
+  z-index: 10;
+  color: var(--text-primary, #333);
+  white-space: nowrap;
+}
+
+@media (prefers-color-scheme: dark) {
+  .tooltip {
+    background: var(--bg-secondary, #252525);
+    border-color: var(--border-color, #333333);
+    color: var(--text-primary, #f0f0f0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.tooltipValue {
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* Animation */
+.drawAnimation {
+  animation: drawLine 1.5s ease-out forwards;
+}
+
+.fillAnimation {
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+@keyframes drawLine {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.2;
+  }
+}
