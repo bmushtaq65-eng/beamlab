@@ -13,10 +13,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@epanet-js/epanet-engine": "^1.0.1",
+    "d3": "^7.9.0",
+    "epanet-js": "^0.9.0",
+    "lucide-react": "^1.31.0",
     "react": "^19.2.8",
-    "react-dom": "^19.2.8"
+    "react-dom": "^19.2.8",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
+    "@types/d3": "^7.4.3",
     "@types/node": "^24.13.3",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",

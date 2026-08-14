@@ -11,9 +11,11 @@ import { AdWidget } from './AdWidget';
 export function LandingPage() {
   const { dispatch } = useAppContext();
 
-  const handleStartAnalysis = () => {
+  const handleStartBeamAnalysis = () => {
     dispatch({ type: 'SET_VIEW', payload: 'workspace' });
   };
+
+
 
   const handleTryExample = () => {
     // Load the mixed loading example
@@ -45,7 +47,8 @@ export function LandingPage() {
             <span className="logo-text">BEAM<span className="logo-accent">LAB</span></span>
           </div>
           <nav className="landing-nav">
-            <button className="btn btn-ghost" onClick={handleStartAnalysis}>Start Analysis</button>
+            <button className="btn btn-ghost" onClick={handleStartBeamAnalysis}>Beam Analysis</button>
+
           </nav>
         </div>
       </header>
@@ -55,7 +58,7 @@ export function LandingPage() {
         <div className="hero-content">
           <div className="hero-badge">Structural Beam Analysis, Made Visual</div>
           <h1 className="hero-title">
-            Analyze Beams<br/>
+            Analyze Structures<br/>
             <span className="hero-title-accent">Like an Engineer.</span>
           </h1>
           <p className="hero-subtitle">
@@ -63,18 +66,19 @@ export function LandingPage() {
             from one interactive beam model.
           </p>
           <div className="hero-cta-group">
-            <button className="btn btn-primary btn-lg" onClick={handleStartAnalysis}>
+            <button className="btn btn-primary btn-lg" onClick={handleStartBeamAnalysis}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <polygon points="5 3 19 12 5 21 5 3"/>
               </svg>
-              Start Analysis
+              Beam Analysis
             </button>
+
             <button className="btn btn-outline btn-lg" onClick={handleTryExample}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <rect x="3" y="3" width="18" height="18" rx="2"/>
                 <path d="M9 3v18M3 9h18"/>
               </svg>
-              Try Example
+              Try Example (Beam)
             </button>
           </div>
         </div>
@@ -187,9 +191,6 @@ export function LandingPage() {
             Results are intended for educational and preliminary analysis purposes 
             and should be independently verified by a qualified engineer before use 
             in construction or safety-critical applications.
-            <div style={{ marginTop: '1rem', display: 'flex', justifyContent: 'center' }}>
-              <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fbmushtaq65-eng.github.io%2Fbeamlab&countColor=%23263759" alt="visits" />
-            </div>
           </div>
         </div>
       </footer>
