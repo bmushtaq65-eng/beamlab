@@ -1,32 +1,49 @@
-# React + TypeScript + Vite
+# 🏗️ Beam Lab
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Beam Lab is an interactive web-based simulation and analysis tool. It provides an intuitive canvas interface to build, analyze, and visualize systems directly in your browser.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+You can try out Beam Lab live on GitHub Pages:
+**👉 [https://bmushtaq65-eng.github.io/beamlab/](https://bmushtaq65-eng.github.io/beamlab/)**
 
-## React Compiler
+## 🛠️ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Interactive Canvas**: Visually draw and build your network using a point-and-click interface.
+* **Property Panel**: Edit properties for nodes and connections with ease.
+* **Live Simulation Engine**: Run simulations natively in the browser without relying on external servers.
+* **Visual Results**: View results mapped directly onto the canvas for instant feedback.
+* **Data Export**: Export your simulation data and results to Excel for further analysis.
 
-## Expanding the Oxlint configuration
+## 💻 Running Locally
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+To run Beam Lab on your local machine, follow these steps:
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/bmushtaq65-eng/beamlab.git
+   cd beamlab
+   ```
+
+2. **Install dependencies:**
+   Make sure you have Node.js installed, then run:
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser:**
+   Navigate to `http://localhost:5173` to view the app!
+
+## 📦 Deployment
+
+This project uses `gh-pages` to deploy to GitHub Pages. To build and deploy the app:
+
+```bash
+npm run deploy
 ```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+*(Make sure GitHub Pages is configured in your repository settings to serve from the `gh-pages` branch).*
